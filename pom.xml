@@ -60,6 +60,20 @@
                 <release>12</release>
                 </configuration>
             </plugin>
+
+<!--            //basic configuration for jar plugin- automatically installed but we can configure it into our file-->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jar-plugin</artifactId>
+                <version>3.1.2</version>
+                <configuration>
+                    <includes>
+                        <include>**/*.xml</include>
+                    </includes>
+                </configuration>
+            </plugin>
+
+
         </plugins>
     </build>
 <!--//if we want to change the release version and need to update our project we will select the project name and right click the Project file(untitled), select Maven, select update project, this will rebuild and configure the correct project application-->
