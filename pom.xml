@@ -12,6 +12,21 @@
             <version>3.8.1</version>
         </dependency>
 
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-engine</artifactId>
+            <version>5.0.2</version>
+            <scope>test</scope>
+        </dependency>
+<!-- //to view this click dependencies(near terminal)->allmodules->project name-> JUnit-->
+
+        <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-core</artifactId>
+            <version>5.4.1.Final</version>
+        </dependency>
+
+
     </dependencies>
     <build>
 <!--        <finalName>foo</finalName>showing override principles within build structure and renaming-->
@@ -68,3 +83,6 @@
         <!--//goals demo cofigures by right clicking project then converts to maven project but this project through IntelliJ was create as a aven prokect>-->
 
 <!--        //in terminal running mvn clean, mvn compile, mvn install-->
+
+<!--//SCOPES-->
+<!--//compile, provided, runtime, test, system(don't use -super brittle and causes problems because it hard codes a path to a jar), import(dependency )-->
