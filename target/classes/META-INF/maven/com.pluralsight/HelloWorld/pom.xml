@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+
+    <dependencies>
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-lang3</artifactId>
+            <version>3.8.1</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-engine</artifactId>
+            <version>5.0.2</version>
+            <scope>test</scope>
+        </dependency>
+<!-- //to view this click dependencies(near terminal)->all modules->project name-> JUnit-->
+
+        <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-core</artifactId>
+            <version>5.4.1.Final</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-core</artifactId>
+            <version>5.2.0.BUILD-SNAPSHOT</version>
+        </dependency>
+<!--        //throws error because no repository attached to it-->
+
+    </dependencies>
+<!--    //location for adding repositories-->
+    <repositories>
+        <repository>
+            <id>spring-snapshot</id>
+            <url>https://repo.spring.io/ui/native/libs-snapshot</url>
+            <snapshots><enabled>true</enabled></snapshots>
+            <releases><enabled>false</enabled></releases>
+       </repository>
+<!-- // adding this repository removes the error on it's corresponding dependency-->
+    </repositories>
+
+
+
+
+
+    <build>
+<!--        <finalName>foo</finalName>showing override principles within build structure and renaming-->
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.8.0</version>
+                <configuration>
+                <release>12</release>
+                </configuration>
+            </plugin>
+
+<!--            //basic configuration for jar plugin- automatically installed but we can configure it into our file-->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jar-plugin</artifactId>
+                <version>3.1.2</version>
+                <configuration>
+                    <includes>
+                        <include>**/*.xml</include>
+                    </includes>
+                </configuration>
+            </plugin>
+
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-source-plugin</artifactId>
+                <version>3.1.0</version>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>jar</goal>
+                        </goals>
+                        <phase>install</phase>
+                    </execution>
+                </executions>
+            </plugin>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-javadoc-plugin</artifactId>
+                <version>3.1.0</version>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>jar</goal>
+                        </goals>
+                        <phase>install</phase>
+                    </execution>
+                </executions>
+<!--//in api dox in explorer selecct index for browser-->
+            </plugin>
+
+
+        </plugins>
+    </build>
+<!--//if we want to change the release version and need to update our project we will select the project name and right click the Project file(untitled), select Maven, select update project, this will rebuild and configure the correct project application-->
+
+    <groupId>com.pluralsight</groupId>
+    <artifactId>HelloWorld</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <packaging>jar</packaging>
+
+    <properties>
+        <maven.compiler.source>16</maven.compiler.source>
+        <maven.compiler.target>16</maven.compiler.target>
+    </properties>
+
+</project>
+        <!--//add project-->
+        <!--//add group id-->
+        <!--//add artifact id-->
+        <!--//add version 1.0-SNAPSHOT-->
+        <!--//add model version 4.0.0-->
+        <!--//add packaging of type jar-->
+        <!--//for JAva 10+ we have to add a build section and a plugin then -> add maven-compiler-plugin and specify a release-->
+        <!--//adding this portion for Java 10+-->
+        <!--<build>-->
+        <!--<plugins> -->
+        <!--    <plugin>-->
+        <!--       <groupId>org.apache.maven.plugins</groupId>->
+                   <artifactId>maven-compiler-plugin</artifactId>-->
+        <!--         <version>3.8.0</version>-->
+        <!--        <configuration>-->
+        <!--            <release>12</release>-->
+        <!--           ...-->
+
+        <!--//test file isn't necessarily for white box or integration testing -specifically for unit tests-->
+
+        <!--//packaging can be jar war ear or rar file -jar is the default even if not coded in but here in this example we have hard coded it in-->
+
+        <!--//dependencies-->
+
+        <!--&lt;!&ndash;//goals - clean, compile, package, install(installs project locally), deploy(installs project remotely), -->
+
+        <!--//goals demo configures by right clicking project then converts to maven project but this project through IntelliJ was create as a maven project>-->
+
+<!--        //in terminal running mvn clean, mvn compile, mvn install-->
+
+<!--//SCOPES-->
+<!--//compile, provided, runtime, test, system(don't use -super brittle and causes problems because it hard codes a path to a jar), import(dependency )-->
+
+
+<!--//Adding a repository-->
+<!--//visit https://repo.spring.io/ui/native/libs-snapshot/org/springframework/spring-core/5.2.0.BUILD-SNAPSHOT-->
+<!--//then adding this dependency to our code is what maven searches and does when we implement and ask it to download these-->
