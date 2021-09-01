@@ -26,8 +26,29 @@
             <version>5.4.1.Final</version>
         </dependency>
 
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-core</artifactId>
+            <version>5.2.0.BUILD-SNAPSHOT</version>
+        </dependency>
+<!--        //throws error because no repository attatched to it-->
 
     </dependencies>
+<!--    //location for adding repositories-->
+    <repositories>
+        <repository>
+            <id>spring-snapshot</id>
+            <url>https://repo.spring.io/ui/native/libs-snapshot</url>
+            <snapshots><enabled>true</enabled></snapshots>
+            <releases><enabled>false</enabled></releases>
+       </repository>
+<!-- // adding this repository removes the error on it's corresponding dependency-->
+    </repositories>
+
+
+
+
+
     <build>
 <!--        <finalName>foo</finalName>showing override principles within build structure and renaming-->
         <plugins>
@@ -86,3 +107,8 @@
 
 <!--//SCOPES-->
 <!--//compile, provided, runtime, test, system(don't use -super brittle and causes problems because it hard codes a path to a jar), import(dependency )-->
+
+
+<!--//Adding a repository-->
+<!--//visit https://repo.spring.io/ui/native/libs-snapshot/org/springframework/spring-core/5.2.0.BUILD-SNAPSHOT-->
+<!--//then adding this dependency to our code is what maven searches and does when we implement and ask it to download these-->
