@@ -88,6 +88,22 @@
                 </executions>
             </plugin>
 
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-javadoc-plugin</artifactId>
+                <version>3.1.0</version>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>jar</goal>
+                        </goals>
+                        <phase>install</phase>
+                    </execution>
+                </executions>
+<!--//in api dox in explorer selecct index for browser-->
+            </plugin>
+
+
         </plugins>
     </build>
 <!--//if we want to change the release version and need to update our project we will select the project name and right click the Project file(untitled), select Maven, select update project, this will rebuild and configure the correct project application-->
