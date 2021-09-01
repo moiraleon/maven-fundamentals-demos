@@ -4,6 +4,18 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
+
+    <dependencies>
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-lang3</artifactId>
+            <version>3.8.1</version>
+        </dependency>
+
+    </dependencies>
+
+
+
     <groupId>com.pluralsight</groupId>
     <artifactId>HelloWorld</artifactId>
     <version>1.0-SNAPSHOT</version>
@@ -32,3 +44,15 @@
 <!--        <configuration>-->
 <!--            <release>12</release>-->
 <!--           ...-->
+
+<!--//test file isn't necessarily for white box or integration testing -specifically for unit tests-->
+
+<!--//packaging can be jar war ear or rar file -jar is the default even if not coded in but here in this example we have hard coded it in-->
+
+<!--//dependencies-->
+
+<!--&lt;!&ndash;//goals - clean, compile, package, install(installs project locally), deploy(installs project remotely), -->
+
+<!--//goals demo cofigures by right clicking project then converts to maven project but this project through IntelliJ was create as a aven prokect>-->
+
+//in terminal running mvn clean, mvn compile, mvn install
